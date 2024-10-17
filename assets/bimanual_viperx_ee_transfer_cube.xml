@@ -3,7 +3,7 @@
     <include file="vx300s_dependencies.xml"/>
 
     <equality>
-        <weld body1="mocap_left" body2="vx300s_left/gripper_link" solref="0.01 1" solimp=".25 .25 0.001" />
+        <weld body1="mocap_left" body2="vx300s_left/left_finger_link" solref="0.01 1" solimp=".25 .25 0.001" />
         <weld body1="mocap_right" body2="vx300s_right/gripper_link" solref="0.01 1" solimp=".25 .25 0.001" />
     </equality>
 
@@ -13,9 +13,9 @@
         <include file="vx300s_right.xml" />
 
         <body mocap="true" name="mocap_left" pos="0.095 0.50 0.425">
-            <site pos="0 0 0" size="0.003 0.003 0.03" type="box" name="mocap_left_site1" rgba="1 0 0 1"/>
-            <site pos="0 0 0" size="0.003 0.03 0.003" type="box" name="mocap_left_site2" rgba="1 0 0 1"/>
-            <site pos="0 0 0" size="0.03 0.003 0.003" type="box" name="mocap_left_site3" rgba="1 0 0 1"/>
+            <site pos="0 0 0" size="0.003 0.003 0.03" type="box" name="mocap_left_site1" rgba="0 1 0 1"/>
+            <site pos="0 0 0" size="0.003 0.03 0.003" type="box" name="mocap_left_site2" rgba="0 1 0 1"/>
+            <site pos="0 0 0" size="0.03 0.003 0.003" type="box" name="mocap_left_site3" rgba="0 1 0 1"/>
         </body>
         <body mocap="true" name="mocap_right" pos="-0.095 0.50 0.425">
             <site pos="0 0 0" size="0.003 0.003 0.03" type="box" name="mocap_right_site1" rgba="1 0 0 1"/>

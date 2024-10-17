@@ -23,6 +23,13 @@
                             <joint name="vx300s_left/wrist_angle" pos="0 0 0" axis="0 1 0" limited="true" range="-1.8675 2.23402" frictionloss="30" />
                             <geom quat="0.707107 0 0 0.707107" type="mesh" mesh="vx300s_6_wrist" name="vx300s_left/6_wrist" />
                             <body name="vx300s_left/gripper_link" pos="0.069744 0 0">
+
+                                <body name="cali_joint3" pos="0 0 0">
+                                    <site pos="0 0 0" size="0.1 0.003 0.003" type="box" rgba="0 0 1 1"/>
+                                    <site pos="0 0 0" size="0.003 0.1 0.003" type="box" rgba="0 0 1 1"/>
+                                    <site pos="0 0 0" size="0.003 0.003 0.1" type="box" rgba="0 0 1 1"/>
+                                </body> 
+
                                 <body name="vx300s_left/camera_focus" pos="0.15 0 0.01">
                                     <site pos="0 0 0" size="0.01" type="sphere" name="left_cam_focus" rgba="0 0 1 0"/>
                                 </body>
@@ -40,6 +47,12 @@
                                     <geom pos="-0.0685 0 0" quat="0.707107 0 0 0.707107" type="mesh" mesh="vx300s_8_gripper_prop" name="vx300s_left/8_gripper_prop" />
                                 </body>
                                 <body name="vx300s_left/left_finger_link" pos="0.0687 0 0">
+                                    <body name="cali_joint4" pos="0 0 0">
+                                        <site pos="0 0 0" size="0.1 0.003 0.003" type="box" rgba="0 1 1 1"/>
+                                        <site pos="0 0 0" size="0.003 0.1 0.003" type="box" rgba="0 1 1 1"/>
+                                        <site pos="0 0 0" size="0.003 0.003 0.1" type="box" rgba="0 1 1 1"/>
+                                    </body> 
+                                
                                     <inertial pos="0.017344 -0.0060692 0" quat="0.449364 0.449364 -0.54596 -0.54596" mass="0.034796" diaginertia="2.48003e-05 1.417e-05 1.20797e-05" />
                                     <joint name="vx300s_left/left_finger" pos="0 0 0" axis="0 1 0" type="slide" limited="true" range="0.021 0.057" frictionloss="30" />
                                     <geom condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001" pos="0.005 -0.052 0" euler="3.14 1.57 0" type="mesh" mesh="vx300s_10_gripper_finger_left" name="vx300s_left/10_left_gripper_finger"/>

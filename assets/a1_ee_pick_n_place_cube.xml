@@ -1,0 +1,38 @@
+<mujoco>
+  <include file="a1_scene.xml"/>
+  <include file="a1_dependencies.xml"/>
+
+  <equality>
+    <weld body1="mocap" body2="a1_right/gripper_link" solref="0.002 1" solimp="0 0.99 0.0001" />
+    <!-- <weld body1="mocap" body2="a1_right/gripper_link" solref="0.01 1" solimp=".25 .25 0.001" /> -->
+  </equality>
+
+  <worldbody>
+    <include file="a1_right.xml" />
+
+    <body mocap="true" name="mocap" pos="0.095 0.50 0.425">
+      <site pos="0 0 0" size="0.003 0.003 0.03" type="box" name="mocap_site1" rgba="1 1 0 1"/>
+      <site pos="0 0 0" size="0.003 0.03 0.003" type="box" name="mocap_site2" rgba="1 1 0 1"/>
+      <site pos="0 0 0" size="0.03 0.003 0.003" type="box" name="mocap_site3" rgba="1 1 0 1"/>
+    </body>
+
+    <body name="box" pos="0.1 0.5 0.05">
+      <joint name="red_box_joint" type="free" frictionloss="0.01" />
+      <inertial pos="0 0 0" mass="0.05" diaginertia="0.002 0.002 0.002" />
+      <geom condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001" pos="0 0 0" size="0.02 0.02 0.02" type="box" name="red_box" rgba="1 0 0 1" contype="2" conaffinity="1"/>
+    </body>
+
+    <body name="plate" pos="-0.17 0.5 0.002">
+      <joint name="blue_plate_joint" type="free" frictionloss="0.01" />
+      <inertial pos="0 0 0" mass="0.05" diaginertia="0.002 0.002 0.002" />
+      <geom condim="4" solimp="2 1 0.01" solref="0.01 1" friction="1 0.005 0.0001" pos="0 0 0" size="0.08 0.001" type="cylinder" name="blue_plate" rgba="0 0 1 1" contype="1" conaffinity="2"/>
+    </body>
+
+  </worldbody>
+
+  <actuator>
+        <position ctrllimited="true" ctrlrange="-0.12 0.02" joint="a1_right/left_finger" kp="200"  user="1"/>
+        <position ctrllimited="true" ctrlrange="-0.02 0.12" joint="a1_right/right_finger" kp="200"  user="1"/>
+  </actuator>
+
+</mujoco>

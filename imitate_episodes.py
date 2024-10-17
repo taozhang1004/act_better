@@ -47,7 +47,7 @@ def main(args):
     camera_names = task_config['camera_names']
 
     # fixed parameters
-    state_dim = 14
+    state_dim = 7
     lr_backbone = 1e-5
     backbone = 'resnet18'
     if policy_class == 'ACT':
@@ -203,6 +203,8 @@ def eval_bc(config, ckpt_name, save_episode=True):
         ### set task
         if 'sim_transfer_cube' in task_name:
             BOX_POSE[0] = sample_box_pose() # used in sim reset
+        elif 'sim_pick_n_place_cube' in task_name:
+            BOX_POSE[0] = sample_box_pose()
         elif 'sim_insertion' in task_name:
             BOX_POSE[0] = np.concatenate(sample_insertion_pose()) # used in sim reset
 
