@@ -1,6 +1,6 @@
 ## ACT with GalaXea Robotic Arm A1 🦾
 
-### After completing this project, you will:
+### After completing this tutorial, you will:
 
 - [ ] Understand how to configure the ACT conda environment
 - [ ] Understand how to use MuJoCo to generate simulated training data
